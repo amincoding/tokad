@@ -1,4 +1,5 @@
 // Normalization Logic
+console.log("script.js loaded")
 function normalizeArabicText(text) {
   text = text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}]/gu, '');
   text = text.replace(/[^\u0621-\u064A\u0660-\u0669A-Za-z\s\d]+/g, '');
@@ -195,13 +196,13 @@ function segment(text) {
 }
 
 // UI Functions
-function segmentText() {
+window.segmentText = function() {
   const inputText = document.getElementById('inputText').value;
   console.log('Input Text:', inputText); // Debugging log
   const segmentedText = segment(inputText); // Call the segmentation function
   console.log('Segmented Text:', segmentedText); // Debugging log
   document.getElementById('result').innerHTML = segmentedText; // Update the result field
-}
+};
 
 // function segmentText() {
 //   const inputText = document.getElementById('inputText').value;
