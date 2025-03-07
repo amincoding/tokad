@@ -125,6 +125,62 @@ function tokenize(word) {
       if (word.length > 3 && (word.endsWith('ش') && (word.startsWith('ما') || word.startsWith('م')))) {
         return word.slice(0, 2) + '+' + tokenize(word.slice(2, -1)) + '+' + 'ش';
       }
+
+      if (word.length > 3 && (word.startsWith('يا') || word.startsWith('ما'))) {
+        return word.slice(0, 2) + '+' + tokenize(word.slice(2));
+      }
+
+      if (word.length > 4 && (word.endsWith('كم') || word.endsWith('هم') || word.endsWith('نا') || word.endsWith('ها')) && word[word.length - 3] === 'ل') {
+        return tokenize(word.slice(0, -3)) + '+' + word.slice(-3);
+      }
+
+      if (word.length > 3 && (word.endsWith('كم') || word.endsWith('هم') || word.endsWith('نا') || word.endsWith('ها') || word.endsWith('ني') || word.endsWith('ان') || word.endsWith('ات') || word.endsWith('ين'))) {
+        return tokenize(word.slice(0, -2)) + '+' + word.slice(-2);
+      }
+
+      if (word.length > 3 && word.endsWith('لي')) {
+        return tokenize(word.slice(0, -2)) + '+' + word.slice(-2);
+      }
+
+      if (word.length > 2 && word.endsWith('ة')) {
+        return tokenize(word.slice(0, -1)) + '+' + 'ة';
+      }
+
+      if (word.length > 3 && (word.endsWith('ك') || word.endsWith('و') || word.endsWith('ه') || word.endsWith('ي')) && word[word.length - 2] === 'ل') {
+        return tokenize(word.slice(0, -2)) + '+' + word.slice(-2);
+      }
+
+      if (word.length > 2 && (word.endsWith('ك') || word.endsWith('و') || word.endsWith('ه') || word.endsWith('ي'))) {
+        return tokenize(word.slice(0, -1)) + '+' + word.slice(-1);
+      }
+
+      if (word.length > 3 && word.startsWith('و')) {
+        return word[0] + '+' + tokenize(word.slice(1));
+      }
+
+      if (word.length > 2 && (word.startsWith('ن') || word.startsWith('ي') || word.startsWith('ت')) && !word.endsWith('ة'))) {
+        return word[0] + '+' + tokenize(word.slice(1));
+      }
+
+      if (word.length > 2 && (word.startsWith('ب') || word.startsWith('ف'))) {
+        return word[0] + '+' + tokenize(word.slice(1));
+      }
+
+      if (word.length > 3 && word.startsWith('لل')) {
+        return 'ل' + '+' + 'ال' + '+' + word.slice(2);
+      }
+
+      if (word.length > 3 && word.startsWith('ال')) {
+        return 'ال' + '+' + word.slice(2);
+      }
+
+      if (word.length > 2 && word.startsWith('ل')) {
+        return word[0] + '+' + tokenize(word.slice(1));
+      }
+
+      if (word.length > 2 && word.endsWith('ت')) {
+        return tokenize(word.slice(0, -1)) + '+' + word.slice(-1);
+      }
     }
   }
 
