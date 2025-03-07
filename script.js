@@ -195,19 +195,19 @@ function segment(text) {
 }
 
 // UI Functions
-// function segmentText() {
-//   const inputText = document.getElementById('inputText').value;
-//   console.log('Input Text:', inputText); // Debugging log
-//   const segmentedText = segment(inputText);
-//   console.log('Segmented Text:', segmentedText); // Debugging log
-//   document.getElementById('result').innerHTML = segmentedText;
-// }
-
 function segmentText() {
   const inputText = document.getElementById('inputText').value;
+  console.log('Input Text:', inputText); // Debugging log
   const segmentedText = segment(inputText); // Call the segmentation function
+  console.log('Segmented Text:', segmentedText); // Debugging log
   document.getElementById('result').innerHTML = segmentedText; // Update the result field
 }
+
+// function segmentText() {
+//   const inputText = document.getElementById('inputText').value;
+//   const segmentedText = segment(inputText); // Call the segmentation function
+//   document.getElementById('result').innerHTML = segmentedText; // Update the result field
+// }
 
 function segmentFile() {
   const fileInput = document.createElement('input');
