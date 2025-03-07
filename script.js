@@ -74,11 +74,11 @@ let rootWords = []; // Load from root_words.txt
 let noneWords = []; // Load from none.txt
 
 // Load root words and none words
-fetch('data/root_words.txt')
+fetch('root_words.txt')
   .then(response => response.text())
   .then(data => rootWords = data.split('\n').map(word => word.trim()));
 
-fetch('data/none.txt')
+fetch('none.txt')
   .then(response => response.text())
   .then(data => noneWords = data.split('\n').map(word => word.trim()));
 
