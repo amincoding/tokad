@@ -209,6 +209,19 @@ progress {
   padding-left: 20px;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust spacing */
+}
+
+.logo {
+    width: 200px; /* Adjust size */
+    height: auto;
+}
+
+
 #help li {
   margin-bottom: 10px;
 }
