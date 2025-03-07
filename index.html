@@ -5,16 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOKAD Web</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>TOKAD Web</h1>
-    <textarea id="inputText" placeholder="Enter text here..."></textarea>
-    <button onclick="segmentText()">Segment Text</button>
-    <button onclick="segmentFile()">Segment File</button>
-    <div id="result" dir="rtl"></div>
-    <progress id="progressBar" value="0" max="100"></progress>
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div id="logo">
+      <img src="assets/tokad_logo.png" alt="TOKAD Logo">
+      <span>TOKAD</span>
+    </div>
+    <div id="menu">
+      <button class="menu-item active" onclick="showPage('home')">
+        <span>🏠</span>
+        <span>Home</span>
+      </button>
+      <button class="menu-item" onclick="showPage('file')">
+        <span>📁</span>
+        <span>File</span>
+      </button>
+      <button class="menu-item" onclick="showPage('about')">
+        <span>ℹ️</span>
+        <span>About</span>
+      </button>
+      <button class="menu-item" onclick="showPage('help')">
+        <span>❓</span>
+        <span>Help</span>
+      </button>
+    </div>
   </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <!-- Header -->
+    <div id="header">
+      <h1>TOKAD Web</h1>
+    </div>
+
+    <!-- Pages -->
+    <div id="pages">
+      <!-- Home Page -->
+      <div id="home" class="page active">
+        <textarea id="inputText" placeholder="Enter text here..."></textarea>
+        <div class="buttons">
+          <button onclick="segmentText()">Segment Text</button>
+          <button onclick="segmentFile()">Segment File</button>
+        </div>
+        <div id="result" dir="rtl"></div>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </div>
+
+      <!-- File Page -->
+      <div id="file" class="page">
+        <h2>Upload a File</h2>
+        <input type="file" id="fileInput" accept=".txt">
+        <button onclick="segmentFile()">Process File</button>
+        <div id="fileResult" dir="rtl"></div>
+      </div>
+
+      <!-- About Page -->
+      <div id="about" class="page">
+        <h2>About TOKAD</h2>
+        <p>TOKAD is a powerful tool for tokenizing Algerian dialect text. It helps you break down text into meaningful tokens for analysis and processing.</p>
+      </div>
+
+      <!-- Help Page -->
+      <div id="help" class="page">
+        <h2>Help</h2>
+        <p>Need assistance? Here's how to use TOKAD:</p>
+        <ul>
+          <li>Enter text in the input box and click "Segment Text".</li>
+          <li>Upload a .txt file and click "Process File".</li>
+          <li>View the segmented results in the output area.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
