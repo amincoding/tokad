@@ -1,15 +1,154 @@
+/*= Style for mainwindow START
+  ==================================================== */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: #fff;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for button to change menu style START
+  ==================================================== */
+#change_btn {
+  padding: 5px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for header widget START
+  ==================================================== */
+#widget {
+  background-color: #f9fafd;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon only START
+  ==================================================== */
+#icon_only_widget {
+  background-color: #313a46;
+  width: 150px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
+#icon_only_widget button,
+#icon_only_widget label {
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  color: #788596;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#icon_only_widget button:hover {
+  background-color: rgba(86, 101, 115, 0.5);
+}
+
+#logo_label_1 {
+  padding: 5px;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon and text START
+  ==================================================== */
+#full_menu_widget {
+  background-color: #313a46;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#full_menu_widget button {
+  border: none;
+  border-radius: 3px;
+  text-align: left;
+  padding: 8px 0 8px 15px;
+  color: #788596;
+  background-color: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+
+#full_menu_widget button:hover {
+  background-color: rgba(86, 101, 115, 0.5);
+}
+
+#full_menu_widget button:checked {
+  color: #fff;
+}
+
+#logo_label_2 {
+  padding: 5px;
+  color: #fff;
+}
+
+#logo_label_3 {
+  padding-right: 10px;
+  color: #fff;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for search button START
+  ==================================================== */
+#search_btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for search input START
+  ==================================================== */
+#search_input {
+  border: none;
+  padding: 5px 10px;
+  background-color: #f9fafd;
+  border-radius: 3px;
+  width: 100%;
+}
+
+#search_input:focus {
+  background-color: #70b9fe;
+  outline: none;
+}
+/*= END
+  ==================================================== */
+
+/*= Style for user information button START
+  ==================================================== */
+#user_btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+/*= END
+  ==================================================== */
+
+/*= Additional Styles for Main Content START
+  ==================================================== */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  margin-left: 200px; /* Adjust based on menu width */
+  padding: 20px;
 }
 
 textarea {
@@ -51,3 +190,5 @@ progress {
   height: 20px;
   margin-top: 20px;
 }
+/*= END
+  ==================================================== */
