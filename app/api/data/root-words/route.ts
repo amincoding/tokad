@@ -291,3 +291,9 @@ export async function GET() {
 لازم
 نافع
 
+`
+
+  return new Response(rootWords, {
+    headers: { "Content-Type": "text/plain" },
+  })
+}
