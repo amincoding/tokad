@@ -9,7 +9,7 @@ function normalizeText(text: string): string {
   return text
     .replace(/أ|إ|آ/g, "ا") // Normalize alef variations
     .replace(/ة/g, "ه") // Normalize taa marbouta
-    // .replace(/ي/g, "ى") // Normalize yaa variations
+    .replace(/ي/g, "ى") // Normalize yaa variations
     .replace(/\s+/g, " ") // Normalize whitespace
     .trim()
 }
